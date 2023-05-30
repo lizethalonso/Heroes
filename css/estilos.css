@@ -50,7 +50,7 @@ section {
 }
 
 .background-box {
-    background-image: url(/img/bbatman.png);
+    background-image: url('../img/bbatman.png');
     background-repeat: no-repeat;
     height: 193px;
     position: relative;
