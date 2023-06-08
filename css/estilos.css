@@ -2,72 +2,86 @@
 
 * {
     margin: 0;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-weight: 400;
     box-sizing: border-box;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+/*********************Header*********************/
 
 header {
     background-color: #1CD1B0;
-    height: 38px;
 }
 
 .header-descuentos {
     font-size: 15px;
-    padding-left: 27px;
-    padding-top: 10px;
-}
-
-.container-heroes {
-    background-color: #00669F;
-    height: 101px;
-    box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.25);
-    position: sticky; top: 0;
-    z-index: 30;
+    padding: 7px 0 7px 20px
 }
 
 h1 {
+    background-color: #00669F;
+    color: #FFFFFF;
+    padding: 20px;
     font-size: 40px;
-    padding-left: 27px;
-    padding-top: 25px;
+    z-index: 30;
+    position: sticky; top: 0;
+    box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.25);
 }
 
-main {
-    margin: 100px 120px;
-    position: relative;
-     
-}
+/*********************Main*********************/
 
 section {
-    position: relative;
-    height: 529px;
-    width: 300px;
-    /*border: solid 1px;*/
-    top: 30px;
-    background-color:#F3F3F3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.background-box {
-    background-image: url('../img/bbatman.png');
-    background-repeat: no-repeat;
-    height: 193px;
+article {
+    background-color:#F3F3F3;
+    margin: 100px 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
+    width: 300PX;
+}
+
+section article .background {
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    background-size: cover;
+    height: 193px;
+    width: 300px;
+    position: relative;
+}
+
+section article .bg-batman {
+    background-image: url('../img/bbatman.png');
+}
+
+section article .bg-mm {
+    background-image: url('../img/fondo-mujer-maravilla.png');
+}
+
+section article .bg-hq {
+    background-image: url('../img/bharley.png');
+}
+
+section article .bg-superman {
+    background-image: url('../img/fondo-superman.png');
 }
 
 img {
+    top: 130px;
     border-radius: 50%;
     position: absolute;
     z-index: 20;
-    top: 130px;
-    left: 90px;
+    width: 125px;
 }
 
 i {
     position: absolute;
-    top: 25px;
-    left: 20px;
+    padding: 27px 22px;
 }
 
 h2 {
@@ -78,37 +92,135 @@ h2 {
 
 .text {
     text-align: left;
-    padding: 10px 17px 20px;
-    font-size: 16px;
+    margin: 10px 17px 60px;
+    font-size: 14px;
+    height: 120px;
 }
 
 button {
     background-color: #00669F;
-    width: 120px;
-    height: 48px;
     color: rgba(243, 243, 243, 1);
     border: none;
-    position: absolute;
-    left: 90px;
-    bottom: 18px;
+    padding: 15px 30px;
+    margin-bottom: 20px;
 }
+
+div.plus {
+    background-color: #00669F;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    display: none;
+}
+
+/*********************Footer*********************/
 
 footer {
     background-color: rgba(0, 102, 159, 1);
     color: rgba(255, 249, 249, 1);
-    height: 51px;
-    font-size: 16px;
-    padding-left: 27px;
-    padding-top: 17px;
+    height: 8vh;
+    font-size: 2.5vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
 }
 
-.section-harley {
-    left: 70px;
+.logo {
+    position: absolute;
+    width: 100px;
+    border-radius: 0;
+    top: 12px;
+    right: 10px;
 }
 
-.section2-batman {
+/*********************Responsive*********************/
+
+@media screen and (max-width:768px) {
     
-    left: 140px;
+    header {
+        background-color: #D1891C;
+    }
+
+    div.plus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 20;
+        right: 2%;
+        bottom: 50%;
+    }
+
+    section {
+        justify-content: space-evenly;
+    }
+
+    article {
+        margin: 30px 0;
+    }
+
+    footer {
+        margin-top: 40px;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .logo {
+        width: 016%;
+        
+    }
 }
 
+@media screen and (max-width:480px) {
+
+    header {
+        background-color: #D1891C;
+        height: 3vh;
+        display: flex;
+        align-items: center;
+        width: 100vw;
+    }
+
+    .header-descuentos {
+        font-size: 2vh;
+    }
+
+    h1 {
+        height: 10vh;
+        font-size: 5vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    article {
+        margin-top: 30px;
+    }
+
+    .harley {
+        display: none;
+    }
+
+    footer {
+        justify-content: space-between;
+        align-items: center;
+        font-size: 70%;
+        padding-left: 15px;
+
+    }
+
+    .logo {
+        width: 015%;
+    }
+}
