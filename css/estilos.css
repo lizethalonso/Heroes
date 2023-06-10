@@ -71,6 +71,10 @@ section article .bg-superman {
     background-image: url('../img/fondo-superman.png');
 }
 
+.superman {
+    display: none;
+}
+
 img {
     top: 130px;
     border-radius: 50%;
@@ -165,6 +169,10 @@ footer {
         margin: 30px 0;
     }
 
+    .superman {
+        display: flex;
+    }
+
     footer {
         margin-top: 40px;
         justify-content: space-between;
@@ -209,6 +217,14 @@ footer {
     }
 
     .harley {
+        display: none;
+    }
+
+    .superman {
+        display: flex;
+    }
+
+    img.foto-comp {
         display: none;
     }
 
