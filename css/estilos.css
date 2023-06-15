@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
 
 * {
     margin: 0;
@@ -101,7 +103,7 @@ h2 {
     height: 120px;
 }
 
-button {
+article button {
     background-color: #00669F;
     color: rgba(243, 243, 243, 1);
     border: none;
@@ -109,15 +111,26 @@ button {
     margin-bottom: 20px;
 }
 
-div.plus {
+button.plus {
     background-color: #00669F;
     color: #ffffff;
+    border: none;
     border-radius: 50%;
     font-size: 30px;
     width: 60px;
     height: 60px;
     position: absolute;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 20;
+    right: 1%;
+    bottom: 50%;
+}
+
+button.plus:hover {
+    background-color: #001D2D;
 }
 
 /*********************Footer*********************/
@@ -143,6 +156,120 @@ footer {
     right: 10px;
 }
 
+/**********Formulario**********/
+
+section.form-container {
+    display: flex;
+}
+
+form.form-super {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    height: 700px;
+    background-color: #00669F;
+    border-radius: 45px;
+    color: #FFFFFF;
+}
+
+form.form-super h2, form.form-super p, 
+form.form-super label, 
+section.subform-container div {
+    font-family: 'Inter', sans-serif;  
+    font-size: 20px;
+    font-weight: 300;
+}
+
+form.form-super input {
+    font-family: 'Inter', sans-serif;  
+    font-size: 13px;
+    font-weight: 300;
+} 
+
+form.form-super>h2 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+form.form-super>p {
+    padding: 0 0 15px;
+}
+
+.subform-container {
+    width: 55vw;
+}
+
+.subform-container input, .subform-container select  {
+    height: 8vh;
+    border-radius: 15px;
+    border: none;
+    margin: 15px 0 30px;
+    padding: 0 10px;
+}
+
+.subform-container>div {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.add-file::file-selector-button {
+    background-color: #CECECE;
+    height: 5vh;
+    width: 16vw;
+    text-align: left;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.add-file {
+    font-size: 8px;
+    color: black;
+}
+
+p.cont-check {
+    margin-bottom: 10px;
+}
+
+.label-check {
+    display: flex;
+    align-items: center;
+    margin: 0;  
+}
+
+/*Separación checkbox y su correspondiente opción*/
+.label-check>input {
+    margin: 0 25px 0 0;
+    height: 3vh;
+}
+
+fieldset, textarea {
+    border: none;
+    resize: none;
+    border-radius: 15px;
+    padding: 10px 0 0 10px;
+}
+
+hr {
+    margin: 10px 0 20px 0;
+}
+
+form.form-super .enviar {
+    background-color: #1CD1B0;
+    border: none;
+    border-radius: 20px;
+    margin: 35px 0 10px 0;
+    width: 35%;
+    height: 9vh;
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+}
+
 /*********************Responsive*********************/
 
 @media screen and (max-width:768px) {
@@ -152,12 +279,6 @@ footer {
     }
 
     div.plus {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 20;
-        right: 2%;
         bottom: 50%;
     }
 
@@ -233,7 +354,6 @@ footer {
         align-items: center;
         font-size: 70%;
         padding-left: 15px;
-
     }
 
     .logo {

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Heroes</title>
+</head>
+<body>
+    <header>
+        <p class="header-descuentos">Descuentos 20%</p>
+    </header>
+
+    <h1>Card Super Heroes</h1>
+    
+    <main>
+        <section class="form-container">
+            <form class="form-super" method="">
+                <h2>Añade tu super!</h2>
+                <p>Agrega tu personaje favorito completando
+                    las opciones.
+                </p>
+                <section class="subform-container">
+                    <div class="column1">
+                        <label for="name">*Nombre</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="date">Fecha</label>
+                        <input type="date" name="date" id="date">
+                        <textarea name="description" value="Comentarios" cols="30" rows="15" placeholder="Descripción"></textarea>
+                    </div>
+                    <div class="column2">
+                        <label for="species">*Especie</label>
+                        <select name="species">
+                            <option value="animal">Animal</option>
+                            <option value="elemental">Elemental(Agua, fuego, tierra, aire)</option>
+                            <option value="magic">Magia</option>
+                            <option value="unknown" selected>Unknown - Desconocido</option>
+                        </select>
+                        <label for="photo">Agregar foto</label>
+                        <input class="add-file" type="file" name="foto" id="photo">
+                    
+                        <p class="cont-check">Poderes</p>
+                        <label for="fly" class="label-check">
+                            <input type="checkbox" name="powers" value="fly" id="fly">
+                            Volar
+                        </label>
+                        <label for="ssmart" class="label-check">
+                            <input type="checkbox" name="powers" value="ssmart" id="ssmart">
+                            Superinteligencia
+                        </label>
+                        <label for="laser-beam" class="label-check">
+                            <input type="checkbox" name="powers" value="laser-beam" id="laser-beam">
+                            Vista de rayo laser
+                        </label>
+                        <label for="rich" class="label-check">
+                            <input type="checkbox" name="powers" value="rich" id="rich">
+                            Billetera gorda
+                        </label>
+                        <hr>
+                        <p class="cont-check">Tipo de personaje</p>
+                        <label for="heroe" class="label-check">
+                            <input type="radio" name="character" value="heroe" id="heroe">
+                            Héroe / Heroina
+                        </label>
+                        <label for="villano" class="label-check">
+                            <input type="radio" name="character" value="villano" id="villano">
+                            Villano / Villana
+                        </label>
+                        
+                    </div>
+                </section>
+                <input class="enviar" type="submit" value="Añadir">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados a FRONT END 1</p>
+        <img class="logo" src="./img/logo-github.png" alt="Logo GitHub">
+    </footer>
+</body>
+</html>
