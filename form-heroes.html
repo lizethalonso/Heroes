@@ -12,11 +12,20 @@
 </head>
 <body>
     <header>
-        <p class="header-descuentos">Descuentos 20%</p>
+        <p>Descuentos 20%</p>
     </header>
 
-    <h1>Card Super Heroes</h1>
-    
+    <div class="header2">
+        <h1>Nombre tienda</h1>
+        <nav>
+            <ul>
+                <li>Contacto</li>
+                <li>Registrarme</li>
+                <li>Ingresar</li>
+            </ul>
+        </nav>
+    </div>
+  
     <main>
         <section class="form-container">
             <form class="form-super" method="">
@@ -26,23 +35,23 @@
                 </p>
                 <section class="subform-container">
                     <div class="column1">
-                        <label for="name">*Nombre</label>
+                        <label for="name">*Nombre (obligatorio)</label>
                         <input type="text" name="name" id="name" required>
                         <label for="date">Fecha</label>
                         <input type="date" name="date" id="date">
                         <textarea name="description" value="Comentarios" cols="30" rows="15" placeholder="Descripción"></textarea>
                     </div>
                     <div class="column2">
-                        <label for="species">*Especie</label>
-                        <select name="species">
+                        <label for="species">*Especie (obligatorio)</label>
+                        <select name="species" required>
+                            <option value="" class="especie" selected disabled>Especie</option>
                             <option value="animal">Animal</option>
-                            <option value="elemental">Elemental(Agua, fuego, tierra, aire)</option>
+                            <option value="elemental">Elemental</option>
                             <option value="magic">Magia</option>
-                            <option value="unknown" selected>Unknown - Desconocido</option>
+                            <option value="unknown">Unknown - Desconocido</option>
                         </select>
                         <label for="photo">Agregar foto</label>
                         <input class="add-file" type="file" name="foto" id="photo">
-                    
                         <p class="cont-check">Poderes</p>
                         <label for="fly" class="label-check">
                             <input type="checkbox" name="powers" value="fly" id="fly">

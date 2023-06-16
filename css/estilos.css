@@ -12,21 +12,41 @@
 
 header {
     background-color: #1CD1B0;
-}
-
-.header-descuentos {
     font-size: 15px;
     padding: 7px 0 7px 20px
 }
 
-h1 {
-    background-color: #00669F;
-    color: #FFFFFF;
-    padding: 20px;
-    font-size: 40px;
+.header2 {
     z-index: 30;
     position: sticky; top: 0;
-    box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    display: flex;
+    background-color: #00669F;
+    color: #FFFFFF;
+    padding: 20px 120px;
+    font-size: 40px;
+    background-image: url(../img/imagen-tienda.png);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+nav {
+    background-color: rgba(0, 29, 45, 1);
+    padding: 10px 0;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    color: #FFFFFF;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    flex-grow: 0.02
 }
 
 /*********************Main*********************/
@@ -146,6 +166,7 @@ footer {
     align-items: center;
     position: relative;
     width: 100%;
+
 }
 
 .logo {
@@ -167,26 +188,21 @@ form.form-super {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70vw;
-    height: 700px;
+    width: 75vw;
     background-color: #00669F;
     border-radius: 45px;
     color: #FFFFFF;
+    
 }
 
 form.form-super h2, form.form-super p, 
 form.form-super label, 
-section.subform-container div {
+section.subform-container div,
+input#name {
     font-family: 'Inter', sans-serif;  
     font-size: 20px;
     font-weight: 300;
 }
-
-form.form-super input {
-    font-family: 'Inter', sans-serif;  
-    font-size: 13px;
-    font-weight: 300;
-} 
 
 form.form-super>h2 {
     font-size: 40px;
@@ -195,14 +211,19 @@ form.form-super>h2 {
 }
 
 form.form-super>p {
-    padding: 0 0 15px;
+    padding: 0 0 20px;
+    text-align: center;
 }
 
 .subform-container {
-    width: 55vw;
+    width: 60vw;
+    flex-wrap: wrap;
 }
 
 .subform-container input, .subform-container select  {
+    font-family: 'Inter', sans-serif;  
+    font-size: 13px;
+    font-weight: 300;
     height: 8vh;
     border-radius: 15px;
     border: none;
@@ -215,6 +236,35 @@ form.form-super>p {
     flex-direction: column;
     width: 45%;
 }
+
+input:required ~ label::before {
+    content: none !important;
+  }
+
+option.especie {
+    display: none;
+}
+
+.subform-container select{
+    /* color:rgb(170, 170, 170); */
+    font-size: 20px;
+}
+
+input:invalid, select:invalid {
+    border: 2px solid red;
+}
+
+input:valid, select:valid {
+    border: none;
+}
+
+/* input:required + label::before {
+    content: "kdkdlfkdlfldkl*";
+    color: red;
+    margin-right: 15px;
+    font-size: 20px;
+  } */
+
 
 .add-file::file-selector-button {
     background-color: #CECECE;
@@ -237,25 +287,34 @@ p.cont-check {
 
 .label-check {
     display: flex;
-    align-items: center;
-    margin: 0;  
+    align-items: flex-end;  
+    margin: 0;
 }
 
 /*Separación checkbox y su correspondiente opción*/
 .label-check>input {
-    margin: 0 25px 0 0;
+    margin: 7px 25px 0 0;
     height: 3vh;
 }
 
-fieldset, textarea {
+.label-check>input:checked {
+    filter:brightness(20) sepia(0.50);
+}
+
+textarea {
     border: none;
     resize: none;
     border-radius: 15px;
     padding: 10px 0 0 10px;
+    font-size: 15px;
+}
+
+form.form-super .label-check {
+    font-size: 16px;
 }
 
 hr {
-    margin: 10px 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 form.form-super .enviar {
@@ -270,12 +329,21 @@ form.form-super .enviar {
     font-weight: 700;
 }
 
+form.form-super .enviar:hover {
+    background-color: #001D2D;
+    color: #FFFFFF;
+}
+
 /*********************Responsive*********************/
 
 @media screen and (max-width:768px) {
     
     header {
         background-color: #D1891C;
+    }
+
+    nav ul {
+        justify-content:flex-end;
     }
 
     div.plus {
@@ -292,6 +360,14 @@ form.form-super .enviar {
 
     .superman {
         display: flex;
+    }
+
+    form.form-super {
+        width: 95vw;
+    }
+
+    .subform-container {
+        width: 95vw;
     }
 
     footer {
@@ -327,6 +403,11 @@ form.form-super .enviar {
         display: flex;
         align-items: center;
     }
+
+    nav ul {
+        justify-content:space-evenly;
+        padding: 0;
+    }
     
     section {
         flex-direction: column;
@@ -347,6 +428,14 @@ form.form-super .enviar {
 
     img.foto-comp {
         display: none;
+    }
+
+    form.form-super {
+        width: 92vw;
+    }
+
+    div.column1, div.column2 {
+        width: 85vw;
     }
 
     footer {
